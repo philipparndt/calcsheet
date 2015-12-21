@@ -7,7 +7,6 @@
 	<name>Calcsheet</name>
 	<url>https://github.com/ggsm/calcsheet</url>
 
-
 	<repositories>
 		<repository>
 			<id>mvnrepository</id>
