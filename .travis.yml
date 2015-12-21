@@ -2,7 +2,7 @@ notifications:
   email: false
 env:
   global:
-  - JAVA_HOME=$(/usr/libexec/java_home)
+  #- JAVA_HOME=$(/usr/libexec/java_home)
   - MAVEN_OPTS="-Xmx2G -XX:MaxPermSize=512m"
 cache:
   directories:
