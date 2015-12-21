@@ -1,17 +1,14 @@
 package de.rnd7.calcsheet.gens;
 
-import static org.junit.Assert.*;
-
 import java.awt.Color;
-import java.awt.Rectangle;
-import java.io.IOException;
+import java.io.File;
 
-import org.junit.Test;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.junit.Test;
 
 public class DummyTest {
 	@Test
@@ -39,30 +36,11 @@ public class DummyTest {
 		contentStream.lineTo(500, 690);
 		contentStream.stroke();
 		
-		int startX = 20;
-		int startY = 30;
-		int width = 40;
-		int height = 50;
-		Color color = Color.BLUE;
-		// Draw a blue filled rectangle
-//		drawRect(contentStream, color, new java.awt.Rectangle(startX, startY, width, height), false);
-		
 		// Make sure that the content stream is closed:
 		contentStream.close();
 
 		// Save the results and ensure that the document is properly closed:
-		document.save( "Hello World.pdf");
+		document.save(new File("../target/Hello World.pdf"));
 		document.close();
 	}
-	
-//	void drawRect(PDPageContentStream content, Color color, Rectangle rect, boolean fill) throws IOException {
-//	    content.addRect(rect.x, rect.y, rect.width, rect.height);
-//	    if (fill) {
-//	        content.setNonStrokingColor(color);
-//	        content.fill();
-//	    } else {
-//	        content.setStrokingColor(color);
-//	        content.stroke();
-//	    }
-//	}
 }
