@@ -40,7 +40,7 @@ public class DummyTest {
 		contentStream.close();
 
 		// Save the results and ensure that the document is properly closed:
-		document.save(new File("../target/Hello World.pdf"));
+		document.save(new File("Hello World.pdf"));
 		document.close();
 	}
 }
