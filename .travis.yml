@@ -1,10 +1,12 @@
-notifications:
-  email: false
-env:
-  global:
-  #- JAVA_HOME=$(/usr/libexec/java_home)
-  - MAVEN_OPTS="-Xmx2G -XX:MaxPermSize=512m"
+sudo: false
+
+language: java
+
+jdk:
+  - oraclejdk8
+
+install: mvn install 
+
 cache:
   directories:
-  - "$HOME/.m2"
-language: java
+  - $HOME/.m2
