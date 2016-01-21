@@ -25,7 +25,7 @@ public class FindeBAufgabe extends CalcGenerator {
 		final int a = rand(MIN, solutionMax);
 		final int b = rand(MIN, solutionMax);
 		
-		return String.format("%d\t\t\t=\t%d", a,b);
+		return String.format("%d\t\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u25B7\t%d", a,b);
 	}
 
 }

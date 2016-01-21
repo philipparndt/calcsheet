@@ -16,6 +16,7 @@
 
 import java.util.Random;
 
+import de.rnd7.calcsheet.gens.FindeBAufgabe;
 import de.rnd7.calcsheet.gens.MinusAufgabe;
 import de.rnd7.calcsheet.gens.PlusAufgabe;
 
@@ -33,7 +34,7 @@ public class Main {
 	
 	public Main() {
 		final CalcGenerator[] aufgaben1 = new CalcGenerator[]{
-				new PlusAufgabe(MIN),
+//				new PlusAufgabe(MIN),
 				// new MinusAufgabe(),
 				//new MinusAufgabe(),
 				//new MinusAufgabe(),
@@ -42,11 +43,11 @@ public class Main {
 //				new GroesserKleinerAufgabe(),
 //				new GroesserAufgabe(),
 //				new KleinerAufgabe(),
-				//new FindeBAufgabe(),
+				new FindeBAufgabe(),
 		};
 		final CalcGenerator[] aufgaben2 = new CalcGenerator[]{
 //				new PlusAufgabe(),
-				 new MinusAufgabe(MIN),
+//				 new MinusAufgabe(MIN),
 				//new MinusAufgabe(),
 				//new MinusAufgabe(),
 				//new AnalogieAufgabe(),
@@ -54,7 +55,7 @@ public class Main {
 //				new GroesserKleinerAufgabe(),
 //				new GroesserAufgabe(),
 //				new KleinerAufgabe(),
-				//new FindeBAufgabe(),
+				new FindeBAufgabe(),
 		};
 		
 		for (int i = 0; i < 100; i++) {
