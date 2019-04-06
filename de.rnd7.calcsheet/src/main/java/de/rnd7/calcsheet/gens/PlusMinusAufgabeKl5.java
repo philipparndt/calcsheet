@@ -12,24 +12,39 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- */package de.rnd7.calcsheet;
+ */package de.rnd7.calcsheet.gens;
 
-import java.util.Random;
+import de.rnd7.calcsheet.CalcGenerator;
 
+public class PlusMinusAufgabeKl5 extends CalcGenerator {
 
-public abstract class CalcGenerator {
-	public abstract String doGen(int solutionMax);
-	
-	// variable so that it is not re-seeded every call.
-	private final Random rand = new Random();
-	
-	protected int rand(final int min, final int max) {
-	    // nextInt is normally exclusive of the top value,
-	    // so add 1 to make it inclusive
-	    return rand.nextInt((max - min) + 1) + min;
+	private final int min;
+
+	public PlusMinusAufgabeKl5(final int min) {
+		this.min = min;
 	}
 	
-	protected boolean randBoolean() {
-		return rand.nextBoolean();
+	@Override
+	public String doGen(final int solutionMax) {
+
+		int a = rand(min, solutionMax);
+		int b = rand(min, solutionMax);
+		
+		if (randBoolean()) {
+			a *= -1;
+		}
+		
+		if (randBoolean()) {
+			b *= -1;
+		}
+		
+		String op = "+";
+		
+		if (randBoolean()) {
+			op = "-";
+		}
+		
+		return String.format("%d\t%s\t(%d)\t=", a, op, b);
 	}
+
 }

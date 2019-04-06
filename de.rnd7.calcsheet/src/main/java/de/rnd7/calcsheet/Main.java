@@ -16,13 +16,19 @@
 
 import java.util.Random;
 
+import de.rnd7.calcsheet.gens.AnalogieAufgabe;
 import de.rnd7.calcsheet.gens.FindeBAufgabe;
+import de.rnd7.calcsheet.gens.GroesserAufgabe;
+import de.rnd7.calcsheet.gens.GroesserKleinerAufgabe;
+import de.rnd7.calcsheet.gens.KleinerAufgabe;
 import de.rnd7.calcsheet.gens.MinusAufgabe;
 import de.rnd7.calcsheet.gens.PlusAufgabe;
+import de.rnd7.calcsheet.gens.PlusMinusAufgabeKl5;
+import de.rnd7.calcsheet.gens.UmkehrAufgabe;
 
 public class Main {
-	private static final int MAX_TOTAL = 100;
-	private static final int MIN = 23;
+	private static final int MAX_TOTAL = 150;
+	private static final int MIN = 5;
 	
 	public static void main(final String[] args) {
 		new Main();
@@ -35,32 +41,22 @@ public class Main {
 	public Main() {
 		final CalcGenerator[] aufgaben1 = new CalcGenerator[]{
 //				new PlusAufgabe(MIN),
-				// new MinusAufgabe(),
-				//new MinusAufgabe(),
-				//new MinusAufgabe(),
-				//new AnalogieAufgabe(),
-				//new UmkehrAufgabe(),
+//				new MinusAufgabe(MIN),
+//				new MinusAufgabe(MIN),
+//				new MinusAufgabe(MIN),
+				new PlusMinusAufgabeKl5(11),
+				new PlusMinusAufgabeKl5(65),
+				new PlusMinusAufgabeKl5(1),
+//				new UmkehrAufgabe(),
 //				new GroesserKleinerAufgabe(),
 //				new GroesserAufgabe(),
 //				new KleinerAufgabe(),
-				new FindeBAufgabe(),
+//				new FindeBAufgabe(),
 		};
-		final CalcGenerator[] aufgaben2 = new CalcGenerator[]{
-//				new PlusAufgabe(),
-//				 new MinusAufgabe(MIN),
-				//new MinusAufgabe(),
-				//new MinusAufgabe(),
-				//new AnalogieAufgabe(),
-				//new UmkehrAufgabe(),
-//				new GroesserKleinerAufgabe(),
-//				new GroesserAufgabe(),
-//				new KleinerAufgabe(),
-				new FindeBAufgabe(),
-		};
+
 		
 		for (int i = 0; i < 100; i++) {
 			System.out.println(rand(aufgaben1).doGen(MAX_TOTAL));
-			System.out.println(rand(aufgaben2).doGen(MAX_TOTAL));
 			if ((i + 1) % 5==0) {
 				 System.out.println();
 			}
