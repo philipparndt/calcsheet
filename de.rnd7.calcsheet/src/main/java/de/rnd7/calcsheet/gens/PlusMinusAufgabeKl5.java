@@ -26,25 +26,38 @@ public class PlusMinusAufgabeKl5 extends CalcGenerator {
 	
 	@Override
 	public String doGen(final int solutionMax) {
+		int anzahl=rand(3, 4);
+		
+		StringBuilder sb = new StringBuilder();
+		
+		for(int i=0;i<anzahl;i++) {
+			if (sb.length() != 0) {
+				sb.append(String.format("\t%s\t", nextOp()));
+			}
+			
+			sb.append(String.format("(%s)", nextValue(solutionMax)));
+		}
 
+		sb.append("\t=");
+		return sb.toString();
+	}
+
+	private int nextValue(final int solutionMax) {
 		int a = rand(min, solutionMax);
-		int b = rand(min, solutionMax);
 		
 		if (randBoolean()) {
 			a *= -1;
 		}
-		
-		if (randBoolean()) {
-			b *= -1;
-		}
-		
+		return a;
+	}
+
+	private String nextOp() {
 		String op = "+";
 		
 		if (randBoolean()) {
 			op = "-";
 		}
-		
-		return String.format("%d\t%s\t(%d)\t=", a, op, b);
+		return op;
 	}
 
 }
